@@ -1,61 +1,60 @@
-// Every tuning number and colour in one place. The playfield is a fixed 1280x720 logical area;
-// the renderer scales it to the window, so no rule below depends on the screen size.
-
-export const FIELD = { width: 1280, height: 720, groundY: 664 };
-
-/** The simulation's fixed step, in seconds: 60 updates a second whatever the display's rate. */
+// Neo City Drive - Configuration & Tuning Constants
+export const FIELD = { width: 3200, height: 3200 }; // Massive open world grid
+export const SCREEN = { width: 1280, height: 720 };
 export const STEP = 1 / 60;
 
-export const PLAYER = {
-  width: 72,
-  height: 24,
-  speed: 560,
-  invulnerable: 1.5,
+export const WORLD = {
+  blockSize: 280,
+  roadWidth: 90,
+  sidewalkWidth: 20,
+  gridCols: 10,
+  gridRows: 10,
 };
 
-export const LIVES = 3;
-
-export const BLOCK = {
-  minWidth: 40,
-  maxWidth: 110,
-  height: 36,
-  speed: 240,
-  speedPerLevel: 30,
-  speedJitter: 90,
-  interval: 0.55,
-  intervalScale: 0.88,
-  minInterval: 0.14,
-  dodgePoints: 1,
+export const PLAYER_PHYSICS = {
+  accel: 520,
+  maxSpeed: 480,
+  reverseSpeed: 200,
+  friction: 0.965,
+  steerSpeed: 3.2,
+  handbrakeFriction: 0.88,
+  bodyWidth: 44,
+  bodyHeight: 76,
 };
 
-export const COIN = {
-  size: 24,
-  speed: 190,
-  speedPerLevel: 14,
-  interval: 1.4,
-  intervalJitter: 0.8,
-  points: 10,
+export const WEAPONS = {
+  pistol: { name: 'Pistol', damage: 25, fireRate: 0.35, ammo: 50, speed: 1200, range: 600, spread: 0.05 },
+  smg: { name: 'SMG', damage: 15, fireRate: 0.1, ammo: 150, speed: 1400, range: 700, spread: 0.12 },
+  shotgun: { name: 'Shotgun', damage: 80, fireRate: 0.7, ammo: 30, speed: 1000, range: 450, spread: 0.25, pellets: 5 },
 };
 
-/** Seconds of play per level, and the last level: speeds and spawn rates stop growing there. */
-export const LEVEL = { seconds: 12, max: 12 };
-
-/** How many falling things can exist at once; the pool is allocated once, at boot. */
-export const POOL_SIZE = 64;
+export const MISSIONS = [
+  { id: 1, title: 'Taxi Rush', desc: 'Deliver the VIP passenger across town before time runs out.', reward: 1000 },
+  { id: 2, title: 'Grand Theft Auto', desc: 'Steal the target sports car from downtown and park it in the garage.', reward: 2500 },
+  { id: 3, title: 'Getaway Heat', desc: 'Evade the police and lose 3 wanted stars in 60 seconds.', reward: 2000 },
+  { id: 4, title: 'Neon Speedway', desc: 'Race through all 10 checkpoints across the city circuit.', reward: 1500 },
+  { id: 5, title: 'Rampage', desc: 'Cause chaos and destroy 10 vehicles within the time limit.', reward: 3000 },
+  { id: 6, title: 'VIP Escort', desc: 'Drive the VIP safely to the extraction zone while fending off rivals.', reward: 4000 },
+];
 
 export const PALETTE = {
-  backdrop: '#11141b',
-  sky: '#1b1f2a',
-  ground: '#2a3040',
-  player: '#4fc3f7',
-  block: '#e5534b',
-  coin: '#f2c94c',
-  panel: '#252b38',
-  text: '#eef1f5',
-  muted: '#8b93a3',
+  sky: '#0f172a',
+  water: '#1e3a8a',
+  grass: '#14532d',
+  road: '#334155',
+  roadLine: '#cbd5e1',
+  sidewalk: '#64748b',
+  buildingBase: '#475569',
+  buildingDark: '#1e293b',
+  windowLit: '#fef08a',
+  windowDark: '#334155',
+  playerCar: '#ef4444',
+  policeCar: '#2563eb',
+  trafficCar: '#eab308',
+  pedestrian: '#f8fafc',
+  hudBg: 'rgba(15, 23, 42, 0.85)',
+  hudText: '#f8fafc',
+  accent: '#38bdf8',
 };
 
 export const FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif';
-
-/** Where the best score is kept between visits (this browser only). */
-export const BEST_KEY = 'block-dodger.best';
