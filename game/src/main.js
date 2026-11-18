@@ -14,7 +14,7 @@ const seed = Number.isInteger(seedParam) ? seedParam : Math.floor(Math.random() 
 const canvas = document.getElementById('game');
 const status = document.getElementById('status');
 const world = createWorld(createRandom(seed));
-const renderer = createRenderer(canvas);
+const renderer = createRenderer(canvas, world);
 
 function readBest() {
   try {

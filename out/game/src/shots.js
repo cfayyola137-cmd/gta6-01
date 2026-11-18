@@ -10,7 +10,7 @@ export function stageShot(name, world) {
     return { screen: SCREEN_TITLE, best: 1000 };
   }
 
-  const limit = name === 'end' ? 600 : 120;
+  const limit = name === 'end' ? 3000 : 120;
   for (let i = 0; i < limit; i++) {
     if (world.step(STEP, (i % 30 < 15 ? 0.5 : -0.5), true) & EVENT_OVER) break;
   }

@@ -1,4 +1,5 @@
 // Neo City Drive - Configuration & Tuning Constants (Rewritten)
+export const LIVES = 3;
 export const FIELD = { width: 3200, height: 3200 };
 export const SCREEN = { width: 1280, height: 720 };
 export const STEP = 1 / 60;

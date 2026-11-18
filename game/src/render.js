@@ -6,7 +6,7 @@ export const SCREEN_PLAY = 'play';
 export const SCREEN_PAUSED = 'paused';
 export const SCREEN_OVER = 'over';
 
-export function createRenderer(canvas) {
+export function createRenderer(canvas, world = null) {
   const context = canvas.getContext('2d');
   const view = { scale: 1, x: 0, y: 0 };
 
@@ -167,7 +167,7 @@ export function createRenderer(canvas) {
     context.save();
     context.translate(-camX, -camY);
 
-    drawWorld({ buildings: world?.buildings || [], traffic: world?.traffic || [], state, ...state });
+    drawWorld(world ?? { buildings: state?.buildings || [], traffic: state?.traffic || [], state });
 
     context.restore();
 
