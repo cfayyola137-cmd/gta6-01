@@ -1,7 +1,7 @@
-// Seeded pseudo-random number generator (Mulberry32) for deterministic gameplay and shots.
+// Seeded Pseudo-Random Number Generator (Mulberry32) - Rewritten
 export class Random {
-  constructor(seed = 1) {
-    this.seed = seed >>> 0;
+  constructor(seed = 1337) {
+    this.seed = (seed >>> 0) || 1;
   }
 
   next() {
@@ -20,6 +20,11 @@ export class Random {
   }
 
   choice(arr) {
+    if (!arr || arr.length === 0) return null;
     return arr[this.int(0, arr.length - 1)];
   }
+}
+
+export function createRandom(seed = 1) {
+  return new Random(seed);
 }

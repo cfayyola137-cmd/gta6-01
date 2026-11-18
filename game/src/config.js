@@ -1,7 +1,8 @@
-// Neo City Drive - Configuration & Tuning Constants
-export const FIELD = { width: 3200, height: 3200 }; // Massive open world grid
+// Neo City Drive - Configuration & Tuning Constants (Rewritten)
+export const FIELD = { width: 3200, height: 3200 };
 export const SCREEN = { width: 1280, height: 720 };
 export const STEP = 1 / 60;
+export const BEST_KEY = 'neocity_best_score';
 
 export const WORLD = {
   blockSize: 280,
@@ -12,49 +13,48 @@ export const WORLD = {
 };
 
 export const PLAYER_PHYSICS = {
-  accel: 520,
-  maxSpeed: 480,
-  reverseSpeed: 200,
-  friction: 0.965,
-  steerSpeed: 3.2,
-  handbrakeFriction: 0.88,
-  bodyWidth: 44,
-  bodyHeight: 76,
+  accel: 540,
+  maxSpeed: 500,
+  reverseSpeed: 220,
+  friction: 0.968,
+  steerSpeed: 3.4,
+  bodyWidth: 42,
+  bodyHeight: 74,
 };
 
 export const WEAPONS = {
-  pistol: { name: 'Pistol', damage: 25, fireRate: 0.35, ammo: 50, speed: 1200, range: 600, spread: 0.05 },
-  smg: { name: 'SMG', damage: 15, fireRate: 0.1, ammo: 150, speed: 1400, range: 700, spread: 0.12 },
-  shotgun: { name: 'Shotgun', damage: 80, fireRate: 0.7, ammo: 30, speed: 1000, range: 450, spread: 0.25, pellets: 5 },
+  pistol: { name: 'Pistol', damage: 25, fireRate: 0.3, ammo: 100, speed: 1300, range: 650 },
+  smg: { name: 'SMG', damage: 15, fireRate: 0.1, ammo: 300, speed: 1500, range: 750 },
+  shotgun: { name: 'Shotgun', damage: 85, fireRate: 0.6, ammo: 50, speed: 1100, range: 500 },
 };
 
 export const MISSIONS = [
-  { id: 1, title: 'Taxi Rush', desc: 'Deliver the VIP passenger across town before time runs out.', reward: 1000 },
-  { id: 2, title: 'Grand Theft Auto', desc: 'Steal the target sports car from downtown and park it in the garage.', reward: 2500 },
-  { id: 3, title: 'Getaway Heat', desc: 'Evade the police and lose 3 wanted stars in 60 seconds.', reward: 2000 },
-  { id: 4, title: 'Neon Speedway', desc: 'Race through all 10 checkpoints across the city circuit.', reward: 1500 },
-  { id: 5, title: 'Rampage', desc: 'Cause chaos and destroy 10 vehicles within the time limit.', reward: 3000 },
-  { id: 6, title: 'VIP Escort', desc: 'Drive the VIP safely to the extraction zone while fending off rivals.', reward: 4000 },
+  { id: 1, title: 'Taxi Rush', desc: 'Deliver VIP passenger across downtown before time expires.', reward: 1500, timeLimit: 60 },
+  { id: 2, title: 'Grand Theft Auto', desc: 'Hijack the red sports car and park it safely in the safehouse garage.', reward: 3000, timeLimit: 90 },
+  { id: 3, title: 'Getaway Heat', desc: 'Shake off police pursuit and lose all wanted stars within 60 seconds.', reward: 2500, timeLimit: 60 },
+  { id: 4, title: 'Neon Speedway', desc: 'Navigate all 10 checkpoint rings across the city street circuit.', reward: 2000, timeLimit: 75 },
+  { id: 5, title: 'Rampage', desc: 'Cause chaos by destroying 8 vehicles within the time limit.', reward: 3500, timeLimit: 50 },
+  { id: 6, title: 'VIP Escort', desc: 'Escort the syndicate boss to the extraction zone while dodging rivals.', reward: 5000, timeLimit: 90 },
 ];
 
 export const PALETTE = {
-  sky: '#0f172a',
-  water: '#1e3a8a',
-  grass: '#14532d',
-  road: '#334155',
-  roadLine: '#cbd5e1',
-  sidewalk: '#64748b',
-  buildingBase: '#475569',
-  buildingDark: '#1e293b',
-  windowLit: '#fef08a',
+  sky: '#090d16',
+  road: '#1e293b',
+  roadLine: '#38bdf8',
+  sidewalk: '#475569',
+  buildingBase: '#0f172a',
+  buildingTop: '#1e1b4b',
+  windowLit: '#fde047',
   windowDark: '#334155',
-  playerCar: '#ef4444',
+  playerCar: '#dc2626',
   policeCar: '#2563eb',
   trafficCar: '#eab308',
   pedestrian: '#f8fafc',
-  hudBg: 'rgba(15, 23, 42, 0.85)',
+  hudBg: 'rgba(15, 23, 42, 0.9)',
   hudText: '#f8fafc',
   accent: '#38bdf8',
+  neonPink: '#ec4899',
+  neonCyan: '#06b6d4',
 };
 
 export const FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif';
