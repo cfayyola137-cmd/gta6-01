@@ -1,4 +1,7 @@
-// Input handling for Neo City Drive - Rewritten
+/**
+ * Input handling for Neo City Drive.
+ * Manages keyboard and mouse interactions, capturing state and actions.
+ */
 export const ACTION_CONFIRM = 1;
 export const ACTION_PAUSE = 2;
 export const ACTION_MISSION = 4;
@@ -28,9 +31,9 @@ export class Input {
     });
 
     canvas.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      this.mouse.x = e.clientX - rect.left;
-      this.mouse.y = e.clientY - rect.top;
+      const canvasRect = canvas.getBoundingClientRect();
+      this.mouse.x = e.clientX - canvasRect.left;
+      this.mouse.y = e.clientY - canvasRect.top;
     });
 
     canvas.addEventListener('mousedown', (e) => {

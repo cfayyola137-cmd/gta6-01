@@ -1,4 +1,7 @@
-// Open-world city simulation, traffic, police, combat, missions, and player physics - Rewritten
+/**
+ * Open-world city simulation.
+ * Manages game state, traffic, police, combat, missions, and player physics.
+ */
 import { FIELD, WORLD, MISSIONS } from './config.js';
 import { Random } from './random.js';
 
@@ -89,10 +92,10 @@ export class World {
     const { blockSize, roadWidth, sidewalkWidth, gridCols, gridRows } = WORLD;
     const totalBlockSpace = blockSize + roadWidth;
 
-    for (let r = 0; r < gridRows; r++) {
-      for (let c = 0; c < gridCols; c++) {
-        const bx = roadWidth + c * totalBlockSpace;
-        const by = roadWidth + r * totalBlockSpace;
+    for (let row = 0; row < gridRows; row++) {
+      for (let col = 0; col < gridCols; col++) {
+        const bx = roadWidth + col * totalBlockSpace;
+        const by = roadWidth + row * totalBlockSpace;
         this.blocks.push({ x: bx, y: by, width: blockSize, height: blockSize });
 
         this.buildings.push({

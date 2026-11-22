@@ -1,4 +1,7 @@
-// Neo City Drive - Configuration & Tuning Constants (Rewritten)
+/**
+ * Configuration and tuning constants for Neo City Drive.
+ * Defines game physics, world dimensions, missions, and color palette.
+ */
 export const LIVES = 3;
 export const FIELD = { width: 3200, height: 3200 };
 export const SCREEN = { width: 1280, height: 720 };
@@ -37,6 +40,10 @@ export const MISSIONS = [
   { id: 5, title: 'Rampage', desc: 'Cause chaos by destroying 8 vehicles within the time limit.', reward: 3500, timeLimit: 50 },
   { id: 6, title: 'VIP Escort', desc: 'Escort the syndicate boss to the extraction zone while dodging rivals.', reward: 5000, timeLimit: 90 },
 ];
+
+export function getMissionById(id) {
+  return MISSIONS.find(m => m.id === id);
+}
 
 export const PALETTE = {
   sky: '#090d16',
