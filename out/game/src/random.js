@@ -1,14 +1,17 @@
-// Seeded Pseudo-Random Number Generator (Mulberry32) - Rewritten
+/**
+ * Seeded Pseudo-Random Number Generator (Mulberry32).
+ * Provides reproducible random numbers for game logic and procedural generation.
+ */
 export class Random {
   constructor(seed = 1337) {
     this.seed = (seed >>> 0) || 1;
   }
 
   next() {
-    let t = (this.seed += 0x6d2b79f5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    let hash = (this.seed += 0x6d2b79f5);
+    hash = Math.imul(hash ^ (hash >>> 15), hash | 1);
+    hash ^= hash + Math.imul(hash ^ (hash >>> 7), hash | 61);
+    return ((hash ^ (hash >>> 14)) >>> 0) / 4294967296;
   }
 
   range(min, max) {
