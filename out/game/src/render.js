@@ -1,3 +1,4 @@
+// Vice Coast: canvas renderer
 // Rendering canvas graphics for Neo City Drive - Ultra Rich Visuals (Rewritten)
 import { FIELD, FONT, PALETTE } from './config.js';
 

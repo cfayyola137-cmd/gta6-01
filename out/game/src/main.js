@@ -1,3 +1,4 @@
+// Vice Coast: game bootstrap and loop
 // Main entry point for Neo City Drive - Rewritten
 import { BEST_KEY, LIVES, STEP } from './config.js';
 import { createRandom } from './random.js';

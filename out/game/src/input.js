@@ -1,3 +1,4 @@
+// Vice Coast: keyboard and pointer input
 /**
  * Input handling for Neo City Drive.
  * Manages keyboard and mouse interactions, capturing state and actions.

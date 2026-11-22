@@ -1,3 +1,4 @@
+// Vice Coast: world generation
 /**
  * Open-world city simulation.
  * Manages game state, traffic, police, combat, missions, and player physics.

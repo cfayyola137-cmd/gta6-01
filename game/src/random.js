@@ -1,3 +1,4 @@
+// Vice Coast: deterministic RNG
 /**
  * Seeded Pseudo-Random Number Generator (Mulberry32).
  * Provides reproducible random numbers for game logic and procedural generation.

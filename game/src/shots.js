@@ -1,3 +1,4 @@
+// Vice Coast: screenshot rig
 // Screenshot staging for Neo City Drive - Rewritten
 import { STEP } from './config.js';
 import { EVENT_OVER } from './world.js';

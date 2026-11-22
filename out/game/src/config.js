@@ -1,3 +1,4 @@
+// Vice Coast: balance and layout tuning
 /**
  * Configuration and tuning constants for Neo City Drive.
  * Defines game physics, world dimensions, missions, and color palette.

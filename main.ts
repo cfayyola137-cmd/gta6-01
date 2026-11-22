@@ -1,3 +1,4 @@
+// Vice Coast: node entrypoint
 /**
  * Main entry point for the Neo City Drive build pipeline.
  * Coordinates copying of game assets and generation of the dossier.json for grading.
